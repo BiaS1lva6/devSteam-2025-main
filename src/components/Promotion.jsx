@@ -112,7 +112,7 @@ const Promotion = (props) => {
 
   return (
     <div id="promotion" className="container w-75 my-4">
-      <h2 className="text-uppercase text-center text-md-start ms-md-5 ps-md-3 mb-4">
+      <h2 className="text-uppercase text-center text-md-start text-light ms-md-5 ps-md-3 mb-4">
         Promoções
       </h2>
       <div

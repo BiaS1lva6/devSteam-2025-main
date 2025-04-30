@@ -20,11 +20,9 @@ const CarrinhoOffCanvas = (props) => {
     <div
       id="carrinhoOffCanvas"
       className="offcanvas offcanvas-end"
-      style={{ background: "#364A63" }}
     >
       <div
-        className="offcanvas-header text-light"
-        style={{ background: "#1b2838" }}
+        className="headerCar offcanvas-header text-light"
       >
         <h5 className="offcanvas-title">
           {" "}
