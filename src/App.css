@@ -2,7 +2,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #1b2838;
+  background-color: #1b2838 !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -44,4 +44,21 @@ body {
 
 input.form-control:focus {
   box-shadow: none;
+}
+
+.perfil {
+  height: 500px;
+  width: 500px;
+
+  transition: transform 0.2s;
+  background: linear-gradient(to bottom, #19587b, #2b87ae);
+}
+.edição{ 
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  top: 0;
+  
+  transition: transform 0.2s;
+  background: linear-gradient(to bottom, #19587b, #2b87ae);
 }
