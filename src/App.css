@@ -86,7 +86,7 @@ background-color: #479116 !important;
   width: 500px;
 border-radius: 20px;
   transition: transform 0.2s;
-  background: linear-gradient(to bottom, #19587b, #2b87ae);
+  background:  #74a82a;
 }
 .edicao{ 
   height: 60px;
@@ -98,7 +98,7 @@ border-radius: 20px;
   
 
   transition: transform 0.2s;
-  background: linear-gradient(to bottom, #19587b, #2b87ae);
+  background: linear-gradient(to bottom, #163604, #74a82a);
 }
 .textEdicao
 {
