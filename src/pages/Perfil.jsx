@@ -2,11 +2,22 @@ import React from "react";
 
 const Perfil = () => {
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: "100dvh" }}>
-          <div className="edição m-3 mt-0 colum"></div>
-      <div className="perfil "></div>
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ height: "100dvh" }}
       
-  
+    >
+      
+      <div className="d-flex">
+    
+        <div className="d-flex flex-column gap-2 m-3">
+    
+         <button className="edicao"><h5 className="m-0 text-light mt-1">Cadastro</h5><p className="textEdicao">Edite seus dados</p></button>
+      
+         <button className="edicao"><h5 className="m-0 text-light mt-1">Cartões</h5><p className="textEditar">Ver seus cartões cadastrados</p></button>
+        </div>
+        <div className="perfil "></div>
+      </div>
     </div>
   );
 };
