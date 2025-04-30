@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 const Login = () => {
   const [nome, setNome] = useState("");
-  const [Data, setData] = useState(new Date());
+
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
@@ -52,25 +52,11 @@ const Login = () => {
         <div className="d-flex justify-content-center">
         <button className="corBotao btn w-50">Entrar</button></div>
         <div>
-        <Link to={"/cadastrar-se"} className="d-flex justify-content-center dropdown-item my-3">
+        <Link to={"/cadastrar-se"} className="d-flex justify-content-center text-light dropdown-item my-3">
           Cadastrar-se
         </Link>
       
         </div>
-          <div className="mb-3">
-          <label className="form-label" htmlFor="frmData">
-          Data
-          </label>
-          <input
-            value={Data}
-            onChange={(e) => setData(e.target.value)}
-            className="form-control w-25 " 
-            type="Data"
-            name="frmData"
-            id="frmData"
-          />
-        </div>
-        <button className="btn btn-primary w-100">Entrar</button>
       </form>
     </div>
     </>

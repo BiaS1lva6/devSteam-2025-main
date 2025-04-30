@@ -68,12 +68,12 @@ color:#547625
 }
 
 .corBotao{
-background-color: #479116;
+background-color: #479116 !important;
 }
 
 
 .corBotao:hover{
-  background-color: #74a82a;
+  background-color: #74a82a !important;
 }
 
 .custom-header {
