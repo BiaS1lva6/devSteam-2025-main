@@ -47,53 +47,9 @@ const OutrosJogos = () => {
         descricao:
           "Viva o Velho Oeste como Arthur Morgan em uma jornada cinematográfica com detalhes incríveis e mundo vivo.",
         categoria: "Ação e Aventura",
-      },
-      {
-        id: 5,
-        titulo: "Hogwarts Legacy",
-        preco: 229.99,
-        desconto: 10,
-        imagem:
-          "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/header.jpg",
-        descricao:
-          "Mergulhe no mundo bruxo de Hogwarts no século XIX. Crie seu próprio bruxo e descubra segredos mágicos.",
-        categoria: "RPG de Ação",
-      },
-      {
-        id: 6,
-        titulo: "The Witcher 3: Wild Hunt",
-        preco: 89.99,
-        desconto: 60,
-        imagem:
-          "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
-        descricao:
-          "Acompanhe Geralt de Rívia em sua busca épica por Ciri. Combate envolvente, escolhas impactantes e um dos melhores RPGs já feitos.",
-        categoria: "RPG",
-      },
-      {
-        id: 7,
-        titulo: "God of War",
-        preco: 159.99,
-        desconto: 25,
-        imagem:
-          "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg",
-        descricao:
-          "Kratos retorna em uma jornada emocional com seu filho Atreus. Uma releitura nórdica da lenda do Deus da Guerra.",
-        categoria: "Ação e Aventura",
-      },
-      {
-        id: 8,
-        titulo: "FIFA 24",
-        preco: 299.9,
-        desconto: 15,
-        imagem:
-          "https://cdn.cloudflare.steamstatic.com/steam/apps/2195250/header.jpg",
-        descricao:
-          "O mais recente simulador de futebol da EA Sports, com gráficos realistas e modo carreira renovado.",
-        categoria: "Esportes",
-      },
-    ],
-    []
+      },]
+   
+    
   );
 
   return (
