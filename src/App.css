@@ -123,3 +123,12 @@ border-radius: 20px;
 .headerCar{
   background-color: #4C6B22;
 }
+
+.Cartões{
+  height: 500px;
+  width: 500px;
+border-radius: 20px;
+  transition: transform 0.2s;
+  background: linear-gradient(to bottom, #19587b, #2b87ae);
+  
+}
