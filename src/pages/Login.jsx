@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 
 const Login = () => {
   const [nome, setNome] = useState("");
+  const [Data, setData] = useState(new Date());
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
@@ -45,7 +46,19 @@ const Login = () => {
             id="frmEmail"
           />
         </div>
-
+<div className="mb-3">
+          <label className="form-label" htmlFor="frmData">
+          Data
+          </label>
+          <input
+            value={Data}
+            onChange={(e) => setData(e.target.value)}
+            className="form-control w-25 " 
+            type="Data"
+            name="frmData"
+            id="frmData"
+          />
+        </div>
         <button className="btn btn-primary w-100">Entrar</button>
       </form>
     </div>

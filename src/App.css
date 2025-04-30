@@ -2,7 +2,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #1b2838;
+  background-color: #1b2838 !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -44,4 +44,35 @@ body {
 
 input.form-control:focus {
   box-shadow: none;
+}
+
+.perfil {
+  height: 500px;
+  width: 500px;
+border-radius: 20px;
+  transition: transform 0.2s;
+  background: linear-gradient(to bottom, #19587b, #2b87ae);
+}
+.edicao{ 
+  height: 60px;
+  width: 200px;
+  border-radius: 20px;
+  border: none;
+
+
+  
+
+  transition: transform 0.2s;
+  background: linear-gradient(to bottom, #19587b, #2b87ae);
+}
+.textEdicao
+{
+  color: #d9d9d9;
+ 
+}
+.textEditar
+{
+  color: #d9d9d9;
+  font-size: 14px;
+ 
 }
