@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import HeaderLogin from "../components/HeaderLogin";
+import { Link } from "react-router";
 
 const Login = () => {
   const [nome, setNome] = useState("");
@@ -16,26 +18,26 @@ const Login = () => {
   };
 
   return (
+   <>
+    <HeaderLogin/>
+    
     <div className="container py-5 w-50">
       <form onSubmit={handleLogin}>
         <div className="mb-3">
-          <label className="form-label" htmlFor="frmNome">
-            Nome
-          </label>
+          
           <input
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            className="form-control"
+            className="form-control "
             type="text"
             name="frmNome"
             id="frmNome"
+            placeholder="Nome"
           />
         </div>
 
         <div className="mb-3">
-          <label className="form-label" htmlFor="frmEmail">
-            E-mail
-          </label>
+       
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -43,12 +45,20 @@ const Login = () => {
             type="email"
             name="frmEmail"
             id="frmEmail"
+            placeholder="Email"
           />
         </div>
-
-        <button className="btn btn-primary w-100">Entrar</button>
+        <div className="d-flex justify-content-center">
+        <button className="corBotao btn w-50">Entrar</button></div>
+        <div>
+        <Link to={"/cadastrar-se"} className="d-flex justify-content-center dropdown-item my-3">
+          Cadastrar-se
+        </Link>
+      
+        </div>
       </form>
     </div>
+    </>
   );
 };
 
