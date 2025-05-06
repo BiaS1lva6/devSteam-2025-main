@@ -1,7 +1,7 @@
 import React from "react";
 
 import Cartoes from "./Cartoes";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 
 
