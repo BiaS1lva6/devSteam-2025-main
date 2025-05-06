@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router';
 const Cadastrar = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
+  const [Senha, setSenha] = useState("");
   const [dia, setDia] = useState("");
   const [mes, setMes] = useState("");
   const [ano, setAno] = useState("");
@@ -65,7 +66,21 @@ const Cadastrar = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="frmNascimento " className="form-label">
+            <input
+              value={Senha}
+              onChange={(e) => setSenha(e.target.value)}
+              className="h-100 aria-describedby  form-control"
+              type="Senha"
+              name="frmSenha"
+              id="frmSenha"
+              placeholder="Senha"
+              required
+            />
+          </div>
+
+
+          <div className="mb-3">
+            <label htmlFor="frmNascimento " className="form-label text-success ">
               Data de Nascimento
             </label>
             <input

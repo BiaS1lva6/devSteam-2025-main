@@ -62,6 +62,10 @@ input.form-control:focus {
   background-color: #4C6B22 !important;
   border-color: #4C6B22;
 }
+#frmSenha {
+  background-color: #4C6B22 !important;
+  border-color: #4C6B22;
+}
 
 .corLetra{
 color:#547625
