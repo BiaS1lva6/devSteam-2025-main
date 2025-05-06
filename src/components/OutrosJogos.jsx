@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import GameCard from "./GameCard";
 
 const OutrosJogos = () => {
+  const [selectedGame, setSelectedGame] = useState(null); // Estado para o jogo selecionado
+
   const games = React.useMemo(
     () => [
       {
@@ -14,6 +16,10 @@ const OutrosJogos = () => {
         descricao:
           "O clássico FPS competitivo retorna com gráficos renovados e jogabilidade ainda mais precisa. Perfeito para amantes de tiro tático.",
         categoria: "FPS",
+        nota: 4.8,
+        desenvolvedor: "Valve",
+        lancamento: "2023-09-27",
+        plataforma: ["PC"],
       },
       {
         id: 2,
@@ -25,6 +31,10 @@ const OutrosJogos = () => {
         descricao:
           "Explore Night City como um mercenário em um futuro distópico, com narrativa profunda e visuais impressionantes.",
         categoria: "RPG de Ação",
+        nota: 4.5,
+        desenvolvedor: "CD Projekt Red",
+        lancamento: "2020-12-10",
+        plataforma: ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X|S"],
       },
       {
         id: 3,
@@ -36,21 +46,22 @@ const OutrosJogos = () => {
         descricao:
           "Uma aventura épica em mundo aberto criada por Hidetaka Miyazaki e George R. R. Martin. Desafios intensos e lore profundo.",
         categoria: "RPG",
+        nota: 4.9,
+        desenvolvedor: "FromSoftware",
+        lancamento: "2022-02-25",
+        plataforma: ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X|S"],
       },
-      {
-        id: 4,
-        titulo: "Red Dead Redemption 2",
-        preco: 199.9,
-        desconto: 40,
-        imagem:
-          "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
-        descricao:
-          "Viva o Velho Oeste como Arthur Morgan em uma jornada cinematográfica com detalhes incríveis e mundo vivo.",
-        categoria: "Ação e Aventura",
-      },]
-   
-    
+    ],
+    []
   );
+
+  const handleCardClick = (game) => {
+    setSelectedGame((prevGame) => (prevGame?.id === game.id ? null : game)); // Alterna entre abrir e fechar
+  };
+
+  const closeMobileGame = () => {
+    setSelectedGame(null); // Fecha o modal
+  };
 
   return (
     <div id="outrosJogos" className="container w-75 my-5">
@@ -59,7 +70,14 @@ const OutrosJogos = () => {
       </h2>
       <div id="itensJogos" className="d-flex flex-column ms-md-5 ps-md-3 gap-4">
         {games.map((item) => (
-          <GameCard key={item.id} id={item.id} />
+          <GameCard
+            key={item.id}
+            id={item.id}
+            game={item}
+            click={closeMobileGame}
+            onCardClick={() => handleCardClick(item)}
+            selectedGame={selectedGame?.id === item.id} // Verifica se o jogo está selecionado
+          />
         ))}
       </div>
     </div>
