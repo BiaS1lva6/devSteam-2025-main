@@ -218,21 +218,25 @@ input.form-control:focus {
   background-color: #4c6b22;
 }
 
-.perfil {
-  height: 500px;
+
+.cadastro{
+  height: 510px;
   width: 500px;
   border-radius: 20px;
   transition: transform 0.2s;
-  background: #74a82a;
+  background:#4163173c;
 }
 .edicao {
   height: 60px;
   width: 200px;
   border-radius: 20px;
-  border: none;
+  border: #467111;
+
+
+  
 
   transition: transform 0.2s;
-  background: linear-gradient(to bottom, #163604, #74a82a);
+  background: #46780525;
 }
 .textEdicao {
   color: #d9d9d9;
@@ -254,36 +258,15 @@ input.form-control:focus {
   background-color: #4c6b22;
 }
 
-.Cartões {
+.cartoes{
   height: 500px;
   width: 500px;
   border-radius: 20px;
   transition: transform 0.2s;
-  background: linear-gradient(to bottom, #19587b, #2b87ae);
+  background:#4163173c;
 }
 
-.button-color {
-  background-color: #547625 !important;
-}
-
-.game-backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
-
-.game-modal {
-  background-color: #121212; /* cor de fundo principal do modal */
-}
-
-.game-cover {
-  height: 250px;
-  object-position: top;
-}
-
-.game-gradient {
-  background: linear-gradient(to top, #000000, transparent);
-}
-
-.custombg{
-  background-color: #547625;
+.textcartao{
+  color: #c8ffd24b;
+  
 }
