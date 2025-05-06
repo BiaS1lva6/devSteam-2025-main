@@ -64,27 +64,13 @@ input.form-control:focus {
 }
 
 .footer {
-  background-color: #111;
+  background-color: #4A701C;
   color: #fff;
-  padding: 2rem 4rem;
-  font-family: 'Arial', sans-serif;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 200px;
-}
-
-.footer-section h2, .footer-section h3 {
-  color: #19587b;
-  margin-bottom: 1rem;
+.footer-section h2,
+.footer-section h3 {
+  color: #ffffff;
 }
 
 .footer-section p,
@@ -97,88 +83,31 @@ input.form-control:focus {
   margin-bottom: 0.5rem;
 }
 
-.social-icons {
-  display: flex;
-  gap: 0.8rem;
-  font-size: 1.3rem;
-}
-
-.payment-icons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
 .payment-icons img {
   height: 30px;
 }
 
 .footer-bottom {
-  margin-top: 2rem;
-  text-align: center;
   border-top: 1px solid #333;
-  padding-top: 1rem;
-  font-size: 0.8rem;
   color: #aaa;
 }
 
- .login-page {
-  height: 100vh;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Segoe UI', sans-serif;
+.login-page {
+  background-color: #0f1b00;
 }
 
 .login-box {
   background-color: #111;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  animation: fadeIn 0.6s ease-in-out;
 }
 
 .login-title {
-  color: #313582;
-  margin-bottom: 20px;
-  font-size: 26px;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: none;
-  font-size: 15px;
-}
-
-.login-form button {
-  width: 100%;
-  padding: 12px;
-  background-color: #25327d;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.login-form button:hover {
-  background-color: #0e216b;
+  color: #fff;
 }
 
 .login-msg {
-  margin-top: 15px;
-  color: #facc15;
-  font-size: 14px;
+  color: white;
 }
+
 
 @keyframes fadeIn {
   from {
@@ -281,5 +210,15 @@ input.form-control:focus {
 }
 
 .game-gradient {
-  background: linear-gradient(to top, #000000, transparent);
+  background: linear-gradient(to top, #416317, transparent);
 }
+.btn-success {
+  background-color: #4CD930 !important;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #5c9e2e;
+}
+
+

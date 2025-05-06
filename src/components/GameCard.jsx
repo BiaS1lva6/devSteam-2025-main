@@ -2,45 +2,60 @@ import React from "react";
 import MobileGames from "./MobileGames";
 
 const GameCard = (props) => {
+  const { game, onCardClick, onAddCarrinho, selectedGame, click } = props;
+
+  const precoFinal =
+    game.desconto > 0
+      ? game.preco - game.preco * (game.desconto / 100)
+      : game.preco;
+
   return (
     <>
       <div
-        className="promoCard card border-0 overflow-hidden w-100"
-        onClick={props.onCardClick}
+        className="card mb-3 border-0 shadow bg-dark text-white"
+        style={{ backgroundColor: "#1b2838", cursor: "pointer" }}
+        onClick={onCardClick}
       >
-        <img
-          className="card-img-top object-fit-cover"
-          src={props.game.imagem}
-          height={150}
-          alt="Titulo do jogo"
-        />
-        <div className="card-body d-flex flex-column gap-2">
-          <h5
-            data-bs-toggle="tooltip"
-            title={props.game.titulo}
-            className="card-title text-uppercase text-truncate mw-100 h-100 fw-bold text-light text-nowrap"
-          >
-            {props.game.titulo}
-          </h5>
+        <div className="row g-0">
+          {/* IMAGEM */}
+          <div className="col-md-4">
+            <img
+              src={game.imagem}
+              className="img-fluid h-100 object-fit-cover"
+              alt={game.titulo}
+              style={{ maxHeight: "150px", objectFit: "cover" }}
+            />
+          </div>
 
-          <button
-            id="addCarrinho"
-            className="btn btn-success desconto text-light w-100 border-0"
-            onClick={(e) => {
-              e.stopPropagation(); // Evita que o clique no botão feche o modal
-              props.onAddCarrinho();
-            }}
-          >
-            <i className="bi bi-cart-plus me-2"></i>
-            Adicionar ao carrinho
-          </button>
+          {/* CONTEÚDO */}
+          <div className="col-md-8 d-flex flex-column justify-content-between p-3">
+            <div>
+              <h5 className="card-title fw-bold text-uppercase">
+                {game.titulo}
+              </h5>
+              <p className="card-text mb-2">{game.categoria}</p>
+            </div>
+            <div className="d-flex justify-content-between align-items-center">
+              <h4 className="text-warning m-0">
+                {precoFinal === 0 ? "Grátis" : `R$${precoFinal.toFixed(2)}`}
+              </h4>
+              <button
+                className="btn btn-success fw-semibold"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onAddCarrinho();
+                }}
+              >
+                <i className="bi bi-cart-plus me-2"></i>
+                Adicionar ao carrinho
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Renderiza o MobileGame condicionalmente */}
-      {props.selectedGame && (
-        <MobileGames game={props.game} click={props.click} />
-      )}
+      {/* MOBILE GAME (opcional/modal) */}
+      {selectedGame && <MobileGames game={game} click={click} />}
     </>
   );
 };
