@@ -283,3 +283,7 @@ input.form-control:focus {
 .game-gradient {
   background: linear-gradient(to top, #000000, transparent);
 }
+
+.custombg{
+  background-color: #547625;
+}
