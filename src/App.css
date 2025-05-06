@@ -81,24 +81,24 @@ background-color: #479116;
 }
 
 
-.perfil {
-  height: 500px;
+.cadastro{
+  height: 510px;
   width: 500px;
 border-radius: 20px;
   transition: transform 0.2s;
-  background: linear-gradient(to bottom, #19587b, #2b87ae);
+  background:#4163173c;
 }
 .edicao{ 
   height: 60px;
   width: 200px;
   border-radius: 20px;
-  border: none;
+  border: #467111;
 
 
   
 
   transition: transform 0.2s;
-  background: linear-gradient(to bottom, #19587b, #2b87ae);
+  background: #46780525;
 }
 .textEdicao
 {
@@ -124,11 +124,10 @@ border-radius: 20px;
   background-color: #4C6B22;
 }
 
-.Cartões{
+.cartoes{
   height: 500px;
   width: 500px;
 border-radius: 20px;
   transition: transform 0.2s;
-  background: linear-gradient(to bottom, #19587b, #2b87ae);
-  
+  background:#4163173c;
 }
