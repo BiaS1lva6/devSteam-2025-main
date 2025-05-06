@@ -65,7 +65,7 @@ const Cadastrar = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="frmNascimento" className="form-label">
+            <label htmlFor="frmNascimento " className="form-label">
               Data de Nascimento
             </label>
             <input
@@ -76,7 +76,7 @@ const Cadastrar = () => {
                 setMes(month);
                 setDia(day);
               }}
-              className="form-control"
+              className="form-control button-color"
               type="date"
               name="frmNascimento"
               id="frmNascimento"
