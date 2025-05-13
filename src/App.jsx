@@ -4,11 +4,9 @@ import Header from "./components/Header";
 import Promotion from "./components/Promotion";
 import CarrinhoOffCanvas from "./components/CarrinhoOffCanvas";
 import OutrosJogos from "./components/OutrosJogos";
-import Footer from "./components/footer";
+
 import Login from "./pages/Login";
-
-
-
+import Footer from "./components/footer";
 
 function App() {
   const [carrinhoItem, setCarrinhoItem] = useState([]);
@@ -70,7 +68,7 @@ function App() {
         carrinhoItem={carrinhoItem}
       />
       <OutrosJogos />
-      {location.pathname !== '/login' && <Footer />}
+      <Footer/>
      
     </>
   

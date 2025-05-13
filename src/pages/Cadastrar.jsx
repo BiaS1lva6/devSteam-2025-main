@@ -30,7 +30,7 @@ const Cadastrar = () => {
     <>
       <HeaderLogin />
 
-      <div className="container d-flex flex-column align-items-center justify-content-center mt-5">
+      <div className="container d-flex flex-column align-items-center justify-content-center mt-5 m-auto">
         <h2 className="mb-4 text-success">Cadastrar-se</h2>
 
         <form

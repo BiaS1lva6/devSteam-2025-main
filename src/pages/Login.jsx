@@ -40,9 +40,9 @@ function Login() {
   return (
     <>
       <HeaderLogin />
-      <div className="login-page d-flex justify-content-center align-items-center vh-100">
-        <div className="login-box bg-dark p-4 rounded-4 shadow text-center w-100" style={{ maxWidth: "400px" }}>
-          <h2 className="login-title mb-4">Bem-vindo(a)</h2>
+      <div className="container py-5 d-flex justify-content-center align-items-center vh-100">
+        <div className="login-box w-100 p-4" style={{ maxWidth: "400px" }}>
+          <h2 className="login-title text-center">Bem-vindo(a)</h2>
           <form onSubmit={fazerLogin} className="login-form">
             <div className="mb-3 text-start">
               <input
@@ -51,6 +51,7 @@ function Login() {
                 placeholder="Seu nome"
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="mb-3 text-start">
@@ -60,6 +61,7 @@ function Login() {
                 placeholder="Data de nascimento"
                 value={dataNascimento}
                 onChange={(e) => setDataNascimento(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="mb-3 text-start">
@@ -69,6 +71,7 @@ function Login() {
                 placeholder="Seu e-mail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="mb-4 text-start">
@@ -78,15 +81,19 @@ function Login() {
                 placeholder="Sua senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
+                className="form-control"
               />
             </div>
-            <button type="submit" className="btn btn-success w-100">
-              Entrar
-            </button>
+            <div className="d-flex justify-content-center">
+              <button className="btn btn-success w-100">Entrar</button>
+            </div>
           </form>
-          {mensagem && <p className="login-msg mt-3">{mensagem}</p>}
-          <div className="mt-3">
-            <Link to="/cadastrar-se" className="text-light text-decoration-underline">
+          {mensagem && <p className="login-msg text-center mt-3">{mensagem}</p>}
+          <div className="d-flex justify-content-center">
+            <Link
+              to={"/cadastrar-se"}
+              className="text-light dropdown-item my-3 text-center"
+            >
               Cadastrar-se
             </Link>
           </div>

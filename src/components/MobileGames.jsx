@@ -18,7 +18,7 @@ const MobileGames = (props) => {
       onClick={props.click}
     >
       <div
-        className="modal-dialog modal-dialog-centered modal-lg"
+        className="modalColor modal-dialog modal-dialog-centered modal-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="modal-content game-modal text-white">
@@ -51,7 +51,7 @@ const MobileGames = (props) => {
             </div>
           </div>
 
-          <div className="p-4 text-dark">
+          <div className="modalColor p-4 text-dark">
             <div className="d-flex justify-content-between mb-3 flex-wrap">
               <span>
                 <strong>Nota:</strong> {props.game.nota}
