@@ -13,7 +13,6 @@ const GameCard = (props) => {
     <>
       <div
         className="card mb-3 border-0 shadow bg-dark text-white"
-        style={{ backgroundColor: "#1b2838", cursor: "pointer" }}
         onClick={onCardClick}
       >
         <div className="row g-0">
@@ -21,9 +20,8 @@ const GameCard = (props) => {
           <div className="col-md-4">
             <img
               src={game.imagem}
-              className="img-fluid h-100 object-fit-cover"
+              className="img-fluid h-100 object-fit-cover h-150 object-fit-cover"
               alt={game.titulo}
-              style={{ maxHeight: "150px", objectFit: "cover" }}
             />
           </div>
 
@@ -36,14 +34,15 @@ const GameCard = (props) => {
               <p className="card-text mb-2">{game.categoria}</p>
             </div>
             <div className="d-flex justify-content-between align-items-center">
-              <h4 className="text-warning m-0">
+              <h4 className="corValor m-0">
                 {precoFinal === 0 ? "Grátis" : `R$${precoFinal.toFixed(2)}`}
               </h4>
               <button
-                className="btn btn-success fw-semibold"
+                id="addCarrinho"
+                className="btn desconto text-light w-50 border-0"
                 onClick={(e) => {
-                  e.stopPropagation();
-                  onAddCarrinho();
+                  e.stopPropagation(); 
+                  onAddCarrinho(game) ; 
                 }}
               >
                 <i className="bi bi-cart-plus me-2"></i>
@@ -54,7 +53,6 @@ const GameCard = (props) => {
         </div>
       </div>
 
-      {/* MOBILE GAME (opcional/modal) */}
       {selectedGame && <MobileGames game={game} click={click} />}
     </>
   );
