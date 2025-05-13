@@ -4,11 +4,12 @@ import { Link } from "react-router";
 import HeaderLogin from "../components/HeaderLogin";
 
 const Perfil = () => {
+ 
   const [usuario, setUsuario] = useState([]);
   const [nomeEditado, setNomeEditado] = useState("");
   const [emailEditado, setEmailEditado] = useState("");
   const [senhaEditada, setSenhaEditada] = useState("");
-  const [dataEditada, setDataEditada] = useState("");
+  const [dataEditada, setDataEditada] = useState(new Date());
   const [editar, setEditar] = useState("disabled");
 
   useEffect(() => {
@@ -120,23 +121,19 @@ const Perfil = () => {
 <div  >
 
         <p className="text-light">Data Nascimento</p>
-        <select class="form-select" aria-label="Default select example">
-              <input
-             
-              id="data"
-              type="number"
-              placeholder="Mês"
-            
-              disabled={editar}
-              value={dataEditada}
-              onChange={(e) => setDataEditada(e.target.value)}
-              
-            />
-
-  <option date></option>
-  
-</select>
-</div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="frmData">
+          Data
+          </label>
+          <input
+            value={dataEditada}
+            onChange={(e) => setDataEditada(e.target.value)}
+            className="form-control w-25 " 
+            type="Data"
+            name="frmData"
+            id="frmData"
+          />
+        </div>
             <button
               className="btn btn-success shadow "
               disabled={editar}
@@ -147,6 +144,7 @@ const Perfil = () => {
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 };

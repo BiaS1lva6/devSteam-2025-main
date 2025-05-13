@@ -14,6 +14,14 @@ const Login = () => {
     if (nome && email) {
       localStorage.setItem("devlogin", JSON.stringify({ nome, email }));
 
+      // fazer o fetch da api https://localhost:7191/Usuario/login?useCookies=false&useSessionCookies=false
+      // e redirecionar para a página de checkout
+      // const response = await fetch("https://localhost:7191/Usuario/login", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+
       navigate("/");
     }
   };

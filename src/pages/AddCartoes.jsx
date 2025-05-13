@@ -39,6 +39,7 @@ const AddCartao = () => {
         className=" d-flex justify-content-center align-items-center"
         style={{ height: "100dvh" }}
       >
+          
         <div className="d-flex">
           <div className="d-flex flex-column gap-2 m-3">
             <Link to={"/perfil"} className="text-light text-decoration-none">
@@ -60,28 +61,27 @@ const AddCartao = () => {
            
             
           
-          
+    
             <div className="cadastro d-flex flex-column align-items-start p-5 gap-3">
-           
-             <p className="text-light disabled m-0">Número do cartão</p>
-                <input
-              id="email"
-              type="text"
-        
-              className={`form-control w-100 col-auto col-form-label" `}
-       
-      
-            />
-             <div className=" d-flex flex-column align-items-start w-100">
-             <p className="text-light disabled p-1 m-0">Nome impresso no cartão</p>
-                <input
-              id="email"
-              type="text"
-              className={`form-control w-100 col-auto col-form-label `}
-       
-        
-            />
-            </div>
+            <h1 className="text-light">Adicionar Cartão</h1>
+             <p className="text-light m-0">Nome do cartão</p>
+            <input
+      className="form-control w-100 col-auto col-form-label"
+        type="text"
+        placeholder="Nome do Cartão"
+        value={nomeCartao}
+        onChange={(e) => setNomeCartao(e.target.value)}
+      />
+         
+         <p className="text-light m-0">Número do cartão</p>
+      <input
+      className="form-control w-100 col-auto col-form-label"
+        type="text"
+        placeholder="Número do Cartão"
+        value={numeroCartao}
+        onChange={(e) => setNumeroCartao(e.target.value)}
+      />
+          
             <label className="text-light">Validade</label>
          
 
@@ -97,18 +97,9 @@ const AddCartao = () => {
           
           </div>
 
-            <label className="block mb-1 text-white">Código de segurança</label>
-            <div className="flex gap-2">
-        
-                <input
-              id="email"
-              type="text"
-              className={`form-control w-50 col-auto col-form-label `}
-       
-        
-            />
-             </div>
-          
+  
+         
+         <button className="btn btn-danger" onClick={handleAddCartao}>Cadastrar Cartão</button>
             
 
   <option date></option>
@@ -128,20 +119,9 @@ const AddCartao = () => {
             </div>
             </div>
               
-            <h1>Adicionar Cartão</h1>
-      <input
-        type="text"
-        placeholder="Número do Cartão"
-        value={numeroCartao}
-        onChange={(e) => setNumeroCartao(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Nome no Cartão"
-        value={nomeCartao}
-        onChange={(e) => setNomeCartao(e.target.value)}
-      />
-      <button onClick={handleAddCartao}>Cadastrar Cartão</button>
+   
+      
+    
   </>
   );
 };
