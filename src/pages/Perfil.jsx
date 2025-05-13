@@ -9,7 +9,9 @@ const Perfil = () => {
   const [nomeEditado, setNomeEditado] = useState("");
   const [emailEditado, setEmailEditado] = useState("");
   const [senhaEditada, setSenhaEditada] = useState("");
-  const [dataEditada, setDataEditada] = useState(new Date());
+  const [dia, setDia] = useState("");
+  const [mes, setMes] = useState("");
+  const [ano, setAno] = useState("");
   const [editar, setEditar] = useState("disabled");
 
   useEffect(() => {
@@ -28,9 +30,26 @@ const Perfil = () => {
       setNomeEditado(user.nome); // define valor inicial
       setEmailEditado(user.email); // define valor inicial
       setSenhaEditada(user.senha); // define valor inicial
-      setDataEditada(user.data); // define valor inicial
-    }
+      setAno(ano); // define valor inicial
+      setMes(mes); // define valor inicial
+      setDia(dia); // define valor inicial
+   // Verifica se `user.data` existe e está no formato esperado
+   if (user.data && typeof user.data === "string") {
+    const [ano, mes, dia] = user.data.split("/");
+    setAno(ano || ""); // Define valores iniciais ou strings vazias
+    setMes(mes || "");
+    setDia(dia || "");
+  } else {
+    console.warn("Formato inválido para user.data:", user.data);
+  }
+}
   }, []);
+
+
+  if (!usuario) {
+    return <p>Carregando...</p>;
+  }
+   
 
   const handleSave = () => {
     const usuarioAtualizado = {
@@ -38,7 +57,8 @@ const Perfil = () => {
       nome: nomeEditado,
       email: emailEditado,
       senha: senhaEditada,
-      data: dataEditada,
+      
+      data: `${dia}/${mes}/${ano}`,
     };
 
     setUsuario(usuarioAtualizado);
@@ -47,9 +67,26 @@ const Perfil = () => {
     alert("🎲Dados salvos com sucesso!😁");
   };
 
+
   return (
     <>
       <HeaderLogin />
+      
+      <div className="d-flex justify-content-center align-items-center" style={{ height: "100dvh" }}>
+      <div className="d-flex flex-column gap-2 mt-5 text-light">
+        <h1>Bem-vindo, {usuario.nome}</h1>
+        {usuario.tipo === "admin" ? (
+          <>
+            <h2>Administração</h2>
+            <Link to="/clientes" className="btn btn-primary">Gerenciar Clientes</Link>
+            <Link to="/jogos" className="btn btn-primary">Gerenciar Jogos</Link>
+            <Link to="/cupons" className="btn btn-primary">Gerenciar Cupons</Link>
+          </>
+        ) : (
+          <>
+            
+           
+       
 
       <div
         className="d-flex justify-content-center align-items-center"
@@ -116,23 +153,32 @@ const Perfil = () => {
               
             />
 
-</div>
+
   
 <div  >
 
         <p className="text-light">Data Nascimento</p>
         <div className="mb-3">
-          <label className="form-label" htmlFor="frmData">
-          Data
-          </label>
-          <input
-            value={dataEditada}
-            onChange={(e) => setDataEditada(e.target.value)}
-            className="form-control w-25 " 
-            type="Data"
-            name="frmData"
-            id="frmData"
-          />
+        <input
+    value={`${ano}-${mes}-${dia}`} // Formata a data no formato YYYY-MM-DD
+
+    onChange={(e) =>  {
+      const [year, month, day] = e.target.value.split("-");
+      setAno(year);
+      setMes(month);
+      setDia(day);
+    }}
+    className={`form-control w-100 ${editar === "disabled" ? "disabled" : ""}`} // Ajusta a classe com base no valor de `editar`
+    disabled={editar === "disabled"} // Define `disabled` como booleano
+    placeholder="Edite sua data de nascimento"
+    type="date"
+    name="frmNascimento"
+    id="frmNascimento"
+    required
+  />
+</div>
+          
+          
         </div>
             <button
               className="btn btn-success shadow "
@@ -144,6 +190,10 @@ const Perfil = () => {
           </div>
         </div>
       </div>
+      </div>
+          </>
+        )}
+    </div>
     </div>
     </>
   );

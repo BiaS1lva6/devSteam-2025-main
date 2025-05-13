@@ -3,28 +3,38 @@ import { useNavigate } from "react-router";
 import HeaderLogin from "../components/HeaderLogin";
 import { Link } from "react-router";
 
+const login = async (email, password) => {
+  const response = await fetch("http://localhost:5000/api/auth/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email, password })
+  });
+
+  const data = await response.json();
+
+  if (response.ok) {
+    localStorage.setItem("token", data.token); // salva o token
+    return true;
+  } else {
+    alert("Login falhou: " + data.message);
+    return false;
+  }
+}
 const Login = () => {
   const [nome, setNome] = useState("");
-  const [Data, setData] = useState(new Date());
   const [email, setEmail] = useState("");
+  const [Data, setData] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (nome && email) {
-      localStorage.setItem("devlogin", JSON.stringify({ nome, email }));
-
-      // fazer o fetch da api https://localhost:7191/Usuario/login?useCookies=false&useSessionCookies=false
-      // e redirecionar para a página de checkout
-      // const response = await fetch("https://localhost:7191/Usuario/login", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-
-      navigate("/");
+    const success = await login(email, nome);
+    if (success) {
+      navigate("/perfil");
     }
-  };
+};
 
   return (
    <>
@@ -81,7 +91,7 @@ const Login = () => {
         <button className="btn btn-primary w-100">Entrar</button>
       </form>
     </div>
-    </>
+ </>  
   );
 };
 

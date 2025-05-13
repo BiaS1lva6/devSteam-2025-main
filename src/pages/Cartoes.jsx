@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const Cartoes = () => {
   const [cartoes, setCartoes] = useState([]);
+  
 
   // Função para excluir um cartão
   const excluirCartao = (index) => {
