@@ -140,3 +140,13 @@ border-radius: 20px;
 .button-color{
   background-color: #547625 !important;
 }
+
+.ctn-C:hover{
+
+    background:  #63eb14 !important;
+   
+}
+.ctn-C{
+  background: #132101 !important;
+ color: #d7d7d7 !important;
+}

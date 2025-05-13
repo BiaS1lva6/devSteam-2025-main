@@ -57,7 +57,7 @@ const Checkout = () => {
       setCupomError("");
     } else {
       setCupomAplicado(false);
-      setCupomError("Cupom inválido");
+      setCupomError("Cupom Inválido!");
     }
   };
 
@@ -68,13 +68,13 @@ const Checkout = () => {
   };
 
   return (
-    <div className="container py-4">
+    <div className="container  py-4">
       <div className="row">
         {/* ... Coluna do carrinho permanece a mesma ... */}
         <div className="col-lg-8">
           <div
             className="card border-0 shadow-sm rounded-4 mb-4"
-            style={{ background: "#d9d9d9" }}
+            style={{ background: "#81aa6f" }}
           >
             <div className="card-header border-bottom-0 py-3">
               <h4 className="mb-0 fw-bolder">Meu Carrinho</h4>
@@ -101,25 +101,19 @@ const Checkout = () => {
                           src={item.imagem}
                           alt={item.titulo}
                           className="img-fluid rounded-3 object-fit-cover"
-                          style={{ height: "100px", width: "100%" }}
+                          style={{ height: "200px", width: "100%" }}
                         />
                       </div>
                       <div className="col-md-6 col-8">
                         <h5 className="fw-bold mb-1">{item.titulo}</h5>
                         <small className="text-muted">ID: #{item.id}</small>
-                        <div className="d-flex align-items-center mt-3">
-                          <button
-                            onClick={() => handleRemoverItem(item)}
-                            className="btn btn-sm btn-outline-danger border-0"
-                          >
-                            <i className="bi bi-trash me-1"></i> Remover
-                          </button>
-                        </div>
                       </div>
-                      <div className="col-md-4 col-12 mt-3 mt-md-0">
-                        <div className="row align-items-center">
-                          <div className="col-4 col-md-5">
-                            <div className="border border-dark-subtle border-1 d-flex align-items-center rounded-4 gap-2">
+
+                      <div className="col-md-4  mt-3 ">
+                        <div className="row ">
+                          <div className="col-4 col-md-6 d-flex flex-column justify-content-center align-items-center">
+                            <div className="border border-dark-subtle border-2  align-items-center rounded-4 ">
+
                               <button
                                 className="btn border-0"
                                 type="button"
@@ -133,10 +127,11 @@ const Checkout = () => {
                               >
                                 -
                               </button>
+                      
                               <span>{item.quantidade}</span>
 
                               <button
-                                className="btn border-0"
+                                className="btn btn-sm md-5"
                                 type="button"
                                 onClick={() =>
                                   handleUpdateQuantidade(
@@ -149,17 +144,25 @@ const Checkout = () => {
                               </button>
                             </div>
                           </div>
-                          <div className="col-6 text-end">
-                            <div className="d-flex flex-column">
-                              <small className="text-decoration-line-through text-muted">
+                          <div className="col-6 text-end ">
+                            <div className="d-flex flex-column m-6 ">
+                              <small className="text-decoration-line-through text-muted fs-4  ">
                                 {formatarMoeda(item.preco)}
                               </small>
-                              <span className="fw-bold text-danger fs-5">
+                              <span className="fw-bold text-white fs-4 mt-5">
                                 {formatarMoeda(
                                   item.preco -
                                     (item.preco * item.desconto) / 100
                                 )}
                               </span>
+                              <div className="d-flex align-items-center mt-5">
+                                <button
+                                  onClick={() => handleRemoverItem(item)}
+                                  className="btn btn-danger border-0 "
+                                >
+                                  <i className="bi bi-trash me-1"></i> Remover
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -176,7 +179,7 @@ const Checkout = () => {
         <div className="col-lg-4">
           <div
             className="card border-0 shadow-sm rounded-4"
-            style={{ background: "#d9d9d9" }}
+            style={{ background: "#81aa6f" }}
           >
             <div className="card-header border-bottom-0 py-3">
               <h4 className="mb-0 fw-bolder">Resumo do Pedido</h4>
@@ -185,7 +188,7 @@ const Checkout = () => {
               {/* Seção do cupom de desconto - AGORA NO TOPO */}
               <div className="mb-3">
                 <label htmlFor="cupom" className="form-label mb-2">
-                  cupom de desconto
+                  Cupom de Desconto
                 </label>
                 <div className="input-group">
                   <input
@@ -194,7 +197,7 @@ const Checkout = () => {
                       cupomError ? "is-invalid" : ""
                     } bg-transparent border-dark-subtle`}
                     id="cupom"
-                    placeholder="Digite seu cupom"
+                    placeholder="Digite seu Cupom"
                     value={cupom}
                     onKeyDown={(e) => e.key === "Enter" && aplicarCupom()}
                     onChange={(e) => setCupom(e.target.value)}
@@ -237,7 +240,7 @@ const Checkout = () => {
               </div>
               <div className="d-flex justify-content-between mb-2">
                 <span>Frete</span>
-                <span className="text-success">Grátis</span>
+                <span className="text-success">GRÁTIS</span>
               </div>
 
               {/* Exibe o desconto do cupom quando aplicado */}
@@ -270,17 +273,12 @@ const Checkout = () => {
               </button>
 
               <button
-                style={{
-                  background: isHovered && "#2a475e",
-                  borderColor: "#2a475e",
-                  color: !isHovered && "#2a475e",
-                }}
-                className="btn btn-outline-secondary w-100 mt-2"
+                className="ctn-C btn btn-outline w-100 mt-2"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => navigate("/")}
               >
-                Continuar Comprando
+                CONTINUAR COMPRANDO 
               </button>
             </div>
           </div>
