@@ -41,55 +41,55 @@ function Login() {
   return (
     <>
       <HeaderLogin />
-      <div className="container py-5 w-50 d-flex justify-content-center align-items-center vh-100">
-        <div className="login-box">
-          <h2 className="login-title">Bem-vindo(a)</h2>
+      <div className="container py-5 d-flex justify-content-center align-items-center vh-100">
+        <div className="login-box w-100 p-4" style={{ maxWidth: "400px" }}>
+          <h2 className="login-title text-center">Bem-vindo(a)</h2>
           <form onSubmit={fazerLogin} className="login-form">
-            <div className=" mb-3">
+            <div className="mb-3">
               <input
                 type="text"
                 placeholder="Seu nome"
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
-                className="custombg"
+                className="form-control"
               />
             </div>
-            <div className=" mb-3">
+            <div className="mb-3">
               <input
                 type="date"
                 placeholder="Data de nascimento"
                 value={dataNascimento}
                 onChange={(e) => setDataNascimento(e.target.value)}
-                className="custombg"
+                className="form-control"
               />
             </div>
-            <div className=" mb-3">
+            <div className="mb-3">
               <input
                 type="email"
                 placeholder="Seu e-mail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="custombg"
+                className="form-control"
               />
             </div>
-            <div className=" mb-3">
+            <div className="mb-3">
               <input
                 type="password"
                 placeholder="Sua senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
-                className="custombg"
+                className="form-control"
               />
             </div>
             <div className="d-flex justify-content-center">
-            <button className="btn btn-success w-100">Entrar</button>
-          </div>
+              <button className="btn btn-success w-100">Entrar</button>
+            </div>
           </form>
-          {mensagem && <p className="login-msg">{mensagem}</p>}
+          {mensagem && <p className="login-msg text-center mt-3">{mensagem}</p>}
           <div className="d-flex justify-content-center">
             <Link
               to={"/cadastrar-se"}
-              className="d-flex justify-content-center text-light dropdown-item my-3"
+              className="text-light dropdown-item my-3 text-center"
             >
               Cadastrar-se
             </Link>

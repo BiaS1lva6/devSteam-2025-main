@@ -270,3 +270,7 @@ input.form-control:focus {
   color: #c8ffd24b;
   
 }
+
+.modelColor{
+  background-color: #4c6b22 !important ;
+}
