@@ -201,7 +201,7 @@ input.form-control:focus {
 }
 
 .game-modal {
-  background-color: #121212; /* cor de fundo principal do modal */
+  background-color: #81aa6f !important; /* cor de fundo principal do modal */
 }
 
 .game-cover {
@@ -210,7 +210,7 @@ input.form-control:focus {
 }
 
 .game-gradient {
-  background: linear-gradient(to top, #416317, transparent);
+  background: linear-gradient(to top, #152601, transparent);
 }
 .modelColor{
   background-color: #4c6b22 !important ;
@@ -222,4 +222,8 @@ input.form-control:focus {
 
 .btn-success:hover {
   background-color: #5c9e2e;
+}
+
+.bgColor{
+  background-color: #547625 !important;
 }
