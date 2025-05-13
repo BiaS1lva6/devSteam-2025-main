@@ -12,8 +12,29 @@ const Cadastrar = () => {
   const [ano, setAno] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    try {
+      const resposta = await fetch("http://sua-api.com/cadastro", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, senha, tipo }),
+      });
+  
+      if (!resposta.ok) {
+        throw new Error("Erro ao cadastrar");
+      }
+  
+      alert("Cadastro realizado com sucesso!");
+      navigate("/login");
+    } catch (error) {
+      console.error("Erro ao cadastrar:", error);
+      alert("Erro ao cadastrar!");
+    }
+  
+
     if (nome && email) {
       localStorage.setItem(
         "devlogin",
@@ -26,7 +47,9 @@ const Cadastrar = () => {
       navigate("/");
     }
   };
+ 
 
+  
   return (
     <>
       <HeaderLogin />
