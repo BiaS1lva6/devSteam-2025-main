@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .social-icons, .payment-icons {
+    justify-content: center;
+  }
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: #132101 !important;
@@ -7,20 +20,18 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: #fff;
-
 }
 
 .buscar,
 .buscar::placeholder {
   background-color: #132101;
   color: #d7d7d7;
-  
 }
 
 .promoCard {
   width: 280px;
   transition: transform 0.2s;
-  background:#416317;
+  background: #416317;
 }
 
 .promoCard:hover {
@@ -50,45 +61,101 @@ body {
 
 input.form-control:focus {
   box-shadow: none;
- 
 }
 
+.footer {
+  background-color: #4A701C;
+  color: #fff;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  color: #ffffff;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li,
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.payment-icons img {
+  height: 30px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  color: #aaa;
+}
+
+.login-page {
+  background-color: #0f1b00;
+}
+
+.login-box {
+  background-color: #111;
+}
+
+.login-title {
+  color: #fff;
+}
+
+.login-msg {
+  color: white;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 #frmNome {
-  background-color: #4C6B22 !important;
-  border-color: #4C6B22;
+  background-color: #4c6b22 !important;
+  border-color: #4c6b22;
 }
 
 #frmEmail {
-  background-color: #4C6B22 !important;
-  border-color: #4C6B22;
+  background-color: #4c6b22 !important;
+  border-color: #4c6b22;
 }
 
-.corLetra{
-color:#547625
+.corLetra {
+  color: #547625;
 }
 
-.corBotao{
-background-color: #479116;
+.corBotao {
+  background-color: #479116 !important;
 }
 
-
-.corBotao:hover{
-  background-color: #74a82a;
+.corBotao:hover {
+  background-color: #74a82a !important;
 }
 
 .custom-header {
-  background-color: #4C6B22;
+  background-color: #4c6b22;
 }
 
 
 .cadastro{
   height: 510px;
   width: 500px;
-border-radius: 20px;
+  border-radius: 20px;
   transition: transform 0.2s;
   background:#4163173c;
 }
-.edicao{ 
+.edicao {
   height: 60px;
   width: 200px;
   border-radius: 20px;
@@ -100,34 +167,30 @@ border-radius: 20px;
   transition: transform 0.2s;
   background: #46780525;
 }
-.textEdicao
-{
+.textEdicao {
   color: #d9d9d9;
- 
 }
-.textEditar
-{
+.textEditar {
   color: #d9d9d9;
   font-size: 14px;
- 
 }
 
-.card-body{
-  background-color: #4C6B22;
+.card-body {
+  background-color: #4c6b22;
 }
 
-#carrinhoOffCanvas{
+#carrinhoOffCanvas {
   background-color: #132101;
 }
 
-.headerCar{
-  background-color: #4C6B22;
+.headerCar {
+  background-color: #4c6b22;
 }
 
 .cartoes{
   height: 500px;
   width: 500px;
-border-radius: 20px;
+  border-radius: 20px;
   transition: transform 0.2s;
   background:#4163173c;
 }
@@ -136,3 +199,35 @@ border-radius: 20px;
   color: #c8ffd24b;
   
 }
+
+.game-modal {
+  background-color: #81aa6f !important; /* cor de fundo principal do modal */
+}
+
+.game-cover {
+  height: 250px;
+  object-position: top;
+}
+
+.game-gradient {
+  background: linear-gradient(to top, #152601, transparent);
+}
+.modelColor{
+  background-color: #4c6b22 !important ;
+}
+.btn-success {
+  background-color: #4CD930 !important;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #5c9e2e;
+}
+
+.bgColor{
+  background-color: #547625 !important;
+}
+#frmSenha{
+  background-color: #547625;
+}
+

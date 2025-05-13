@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import Footer from "./components/footer";
-
 import "./App.css";
-
 import Header from "./components/Header";
 import Promotion from "./components/Promotion";
 import CarrinhoOffCanvas from "./components/CarrinhoOffCanvas";
 import OutrosJogos from "./components/OutrosJogos";
+
+import Login from "./pages/Login";
+import Footer from "./components/footer";
 
 function App() {
   const [carrinhoItem, setCarrinhoItem] = useState([]);
@@ -52,9 +52,11 @@ function App() {
       )
     );
   };
+  
 
   return (
     <>
+  
       <Header contadorJogos={carrinhoItem.length} />
       <Promotion
         onAddCarrinho={handleAddCarrinho} //adicionando o click para promoção
@@ -66,8 +68,16 @@ function App() {
         carrinhoItem={carrinhoItem}
       />
       <OutrosJogos />
+      <Footer/>
+     
     </>
+  
+     
+    
+    
+    
   );
+  
 }
 
 export default App;

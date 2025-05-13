@@ -15,6 +15,7 @@ import Perfil from "./pages/Perfil.jsx";
 import Cartoes from "./pages/Cartoes.jsx";
 import AddCartoes from "./pages/AddCartoes.jsx";
 
+import Cadastrar from "./pages/Cadastrar.jsx";
 
 // Contexto global acessível a todas as rotas
 export const GlobalContext = createContext(null);
@@ -30,6 +31,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/login" element={<Login />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/perfil" element={<Perfil />} />
+
+          <Route path="/cadastrar-se" element={<Cadastrar />} />
           <Route path="/AddCartoes" element={<AddCartoes />} />
         </Routes>
       </BrowserRouter>
