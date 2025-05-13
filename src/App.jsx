@@ -71,6 +71,8 @@ function App() {
       />
       <OutrosJogos />
       {location.pathname !== '/login' && <Footer />}
+
+     
      
     </>
   

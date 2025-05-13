@@ -43,7 +43,10 @@ const OutrosJogos = () => {
           <GameCard key={game.id} game={game} />
         ))}
       </div>
+      
     </div>
+    
+    
   );
 };
 

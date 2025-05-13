@@ -7,6 +7,7 @@ const Cadastrar = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [dia, setDia] = useState("");
+    const [senha, setSenha] = useState("");
   const [mes, setMes] = useState("");
   const [ano, setAno] = useState("");
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Cadastrar = () => {
 
         <form
           onSubmit={handleLogin}
-          className="w-100"
+          className="w-100 "
           style={{ maxWidth: "400px" }}
         >
           <div className="mb-3">
@@ -64,8 +65,19 @@ const Cadastrar = () => {
             />
           </div>
 
-          <div className="mb-3">
-            <label htmlFor="frmNascimento " className="form-label">
+          <div className="mb-4 text-start">
+              <input
+                type="password"
+                id="frmSenha"
+                className="form-control"
+                placeholder="Sua senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+              />
+            </div>
+
+          <div className="mb-3 m-0">
+            <label htmlFor="frmNascimento " className="form-label text-light">
               Data de Nascimento
             </label>
             <input

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 import { GlobalContext } from "../main.jsx";
 
+
 const CarrinhoOffCanvas = (props) => {
   const navigate = useNavigate();
   const { formatarMoeda } = useContext(GlobalContext);

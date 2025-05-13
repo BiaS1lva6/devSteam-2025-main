@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router"; 
+import { useNavigate } from "react-router";
 import HeaderLogin from "../components/HeaderLogin";
 import { Link } from "react-router"; 
 
 function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [nome, setNome] = useState("");
-  const [dataNascimento, setDataNascimento] = useState("");
   const [mensagem, setMensagem] = useState("");
   const navigate = useNavigate();
 
@@ -20,20 +18,20 @@ function Login() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, senha, nome, dataNascimento }),
+        body: JSON.stringify({ email, senha }),
       });
 
       const dados = await resposta.json();
 
       if (resposta.ok) {
         setMensagem("✅ Login realizado com sucesso!");
-        navigate("/dashboard");
+        setTimeout(() => navigate("/dashboard"), 1000); 
       } else {
         setMensagem(dados.mensagem || "❌ Erro ao fazer login");
       }
     } catch (error) {
-      setMensagem("❌ Erro na requisição");
-      console.error(error);
+      setMensagem("❌ Erro na requisição. Verifique sua conexão ou tente novamente.");
+      console.error("Erro no login:", error);
     }
   };
 
@@ -44,24 +42,6 @@ function Login() {
         <div className="login-box bg-dark p-4 rounded-4 shadow text-center w-100" style={{ maxWidth: "400px" }}>
           <h2 className="login-title mb-4">Bem-vindo(a)</h2>
           <form onSubmit={fazerLogin} className="login-form">
-            <div className="mb-3 text-start">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Seu nome"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-              />
-            </div>
-            <div className="mb-3 text-start">
-              <input
-                type="date"
-                className="form-control"
-                placeholder="Data de nascimento"
-                value={dataNascimento}
-                onChange={(e) => setDataNascimento(e.target.value)}
-              />
-            </div>
             <div className="mb-3 text-start">
               <input
                 type="email"
