@@ -1,5 +1,4 @@
 import React from "react";
-import MobileGames from "./MobileGames";
 
 const PromoCard = (props) => {
   const precoComDesconto = props.preco - (props.preco * props.desconto) / 100;
